@@ -1,7 +1,7 @@
 # Attention Distillation: A Unified Approach to Visual Characteristics Transfer
 
 
-### [Project Page](https://xxx.github.io) &ensp; [Paper](https://xxx.pdf)
+### [Project Page](https://github.com/xugao97/AttentionDistillation) &ensp; [Paper](https://github.com/xugao97/AttentionDistillation)
 ![alt text](assets/1.jpg)
 
 ## Setup
@@ -34,3 +34,14 @@ python train_vae.py \
     --image_path=/path/to/image \
     --vae_model_path=/path/to/vae
 ```
+
+
+### Web UI
+Run the following command to start the Web UI:
+```bash
+python app.py
+```
+The Web UI will be available at [http://localhost:7860](http://localhost:7860).
+
+### ComfyUI
+We also provide an implementation of Attention Distillation for ComfyUI. For more details, see [here](https://github.com/zichongc/ComfyUI-Attention-Distillation).
