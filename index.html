@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="DESCRIPTION META TAG">
+  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG" />
+  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG" />
+  <meta property="og:url" content="URL OF THE WEBSITE" />
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+
+  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>Attention Distillation: A Unified Approach to Visual Characteristics Transfer</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Attention Distillation: A Unified Approach to Visual
+              Characteristics Transfer</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <a href="https://zhouyangvcc.github.io/" target="_blank">Yang Zhou</a>,</span>
+              <span class="author-block">
+                <a href="https://github.com/xugao97" target="_blank">Xu Gao</a>,</span>
+              <span class="author-block">
+                <a href="https://zichongc.github.io/" target="_blank">Zichong Chen</a>,</span>
+
+              <span class="author-block">
+                <a href="https://vcc.tech/~huihuang" target="_blank">Hui Huang</a><sup>*</sup>
+              </span>
+
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">Shenzhen University<br>CVPR 2025</span>
+              <span class="eql-cntrb"><small><br><sup>*</sup>Corresponding Author</small></span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- Arxiv PDF link -->
+                <span class="link-block">
+                  <a href="https://github.com/xugao97/AttentionDistillation" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+
+                <!-- Supplementary PDF link -->
+                <span class="link-block">
+                  <a href="https://github.com/xugao97/AttentionDistillation"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Supplementary</span>
+                  </a>
+                </span>
+
+                <!-- Github link -->
+                <span class="link-block">
+                  <a href="https://github.com/xugao97/AttentionDistillation" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+                <!-- ArXiv abstract Link -->
+                <span class="link-block">
+                  <a href="https://github.com/xugao97/AttentionDistillation" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Teaser video-->
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <img src="static/images/1.jpg" />
+        <h2 class="subtitle has-text-centered">
+          Given a reference image, our approach can faithfully reproduce its visual characteristics in synthesis,
+          providing a unified framework for a wide range of example-based image synthesis applications, such as artistic
+          style transfer, appearance transfer, stylespecific text-to-image generation, and various texture synthesis
+          tasks.
+        </h2>
+      </div>
+    </div>
+  </section>
+  <!-- End teaser video -->
+
+  <!-- Paper abstract -->
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Recent advances in generative diffusion models have shown a notable inherent understanding of image style
+              and semantics. In this paper, we leverage the self-attention features from pretrained diffusion networks
+              to transfer the visual characteristics from a reference to generated images. Unlike previous work that
+              uses these features as plug-andplay attributes, we propose a novel attention distillation loss calculated
+              between the ideal and current stylization results, based on which we optimize the synthesized image via
+              backpropagation in latent space. Next, we propose an improved Classifier Guidance that integrates
+              attention distillation loss into the denoising sampling process, further accelerating the synthesis and
+              enabling a broad range of image generation applications. Extensive experiments have demonstrated the
+              extraordinary performance of our approach in transferring the examples’ style, appearance, and texture to
+              new images in synthesis.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End paper abstract -->
+
+
+  <section class="section hero is-small">
+    <div class="hero-body">
+      <div class="container is-centered has-text-centered">
+        <h2 class="title is-3">Method</h2>
+        <div class="item">
+          <img id="overview" width="100%" src="./static/images/method.jpg">
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section hero is-small is-light">
+    <div class="hero-body">
+      <div class="container is-centered has-text-centered">
+
+        <h2 class="title is-3">Gallery of Attention Distillation Results</h2>
+
+
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="item">
+            <img id="overview" width="70%" src="./static/images/r3.jpg">
+          </div>
+          
+
+          <div class="item">
+            <img id="overview" width="70%" src="./static/images/r4.jpg">
+          </div>
+
+          <div class="item">
+            <img id="overview" width="70%" src="./static/images/r5.jpg">
+          </div>
+          <div class="item">
+            <img id="overview" width="70%" src="./static/images/r1.jpg">
+          </div>
+          <div class="item">
+            <img id="overview" width="70%" src="./static/images/r2.jpg">
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section hero is-small">
+    <div class="hero-body">
+      <div class="container is-centered has-text-centered">
+        <h2 class="title is-3">Qualitative Comparisons</h2>
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="item">
+            <h2 class="title is-5">Task: Style/Appearance Transfer</h2>
+            <img id="overview" width="90%" src="./static/images/comp_5.jpg">
+          </div>
+          
+          <div class="item">
+            <h2 class="title is-5">Task: Texture Expansion</h2>
+            <img id="overview" width="80%" src="./static/images/comp_2.jpg">
+          </div>
+          <div class="item">
+            <h2 class="title is-5">Task: Controlled Texture Synthesis</h2>
+            <img id="overview" width="80%" src="./static/images/comp_3.jpg">
+          </div>
+          <div class="item">
+            <h2 class="title is-5">Task: Style-specific T2I Generation</h2>
+            <img id="overview" width="90%" src="./static/images/comp_4.jpg">
+          </div>
+          <div class="item">
+            <h2 class="title is-5">Task: Texture Synthesis</h2>
+            <img id="overview" width="50%" src="./static/images/comp_1.jpg">
+          </div>
+
+        </div>
+
+        <div class="item">
+          <br><br><br>
+          <h2 class="title is-3">User Study</h2>
+          <img id="overview" width="50%" src="./static/images/userstudy.jpg">
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section hero is-small is-light">
+    <div class="hero-body">
+      <div class="container is-centered has-text-centered">
+        <h2 class="title is-3">More Applications</h2>
+        <div id="results-carousel" class="carousel results-carousel">
+        <div class="item">
+          <h2 class="title is-5">Attention Distillation + ControNet</h2>
+          <img id="overview" width="60%" src="./static/images/r7.jpg">
+        </div>
+        <div class="item">
+          <h2 class="title is-5">Attention Distillation + MultiDiffusion</h2>
+          <img id="overview" width="60%" src="./static/images/r6.jpg">
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <!--BibTex citation -->
+  <!-- <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>BibTex Code Here</code></pre>
+    </div>
+  </section> -->
+  <!--End BibTex citation -->
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template"
+                target="_blank">Academic Project Page Template</a> which was adopted from the <a
+                href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+              You are free to borrow the source code of this website, we just ask that you link back to this page in the
+              footer. <br> This website is licensed under a <a rel="license"
+                href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Statcounter tracking code -->
+
+  <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+  <!-- End of Statcounter Code -->
+
+</body>
+
+</html>
