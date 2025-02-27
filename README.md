@@ -1,7 +1,7 @@
 # Attention Distillation: A Unified Approach to Visual Characteristics Transfer
 
 
-### [Project Page](https://github.com/xugao97/AttentionDistillation) &ensp; [Paper](https://github.com/xugao97/AttentionDistillation)
+### [Project Page](https://xugao97.github.io/AttentionDistillation/) &ensp; [Paper](https://github.com/xugao97/AttentionDistillation)
 ![alt text](assets/1.jpg)
 
 ## Setup
