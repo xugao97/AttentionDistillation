@@ -282,7 +282,7 @@ class ADPipeline(StableDiffusionPipeline):
 
         self.scheduler.set_timesteps(num_inference_steps)
         timesteps = self.scheduler.timesteps
-        latents = latents.detach()
+        latents = latents.detach().float()
         optimizer = torch.optim.Adam([latents.requires_grad_()], lr=lr)
         optimizer = self.accelerator.prepare(optimizer)
         pbar = tqdm(timesteps, desc="Optimize")
