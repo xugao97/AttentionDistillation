@@ -20,7 +20,7 @@ def create_interface_texture_synthesis(runner):
 
                 with gr.Accordion('Options', open=True):
                     height = gr.Number(label='Height', value=512, precision=0, minimum=2, maximum=4096)
-                    width = gr.Number(label='Width', value=512, precision=0, minimum=2, maximum=4096)
+                    width = gr.Number(label='Width', value=1024, precision=0, minimum=2, maximum=4096)
                     seed = gr.Number(label='Seed', value=2025, precision=0, minimum=0, maximum=2**31)
                     num_steps = gr.Slider(label='Number of Steps', minimum=1, maximum=1000, value=200, step=1)
                     iterations = gr.Slider(label='Iterations', minimum=0, maximum=10, value=2, step=1)
@@ -30,7 +30,7 @@ def create_interface_texture_synthesis(runner):
                     
                     base_model_list = ['stable-diffusion-v1-5/stable-diffusion-v1-5',]
                     model = gr.Radio(choices=base_model_list, label='Select a Base Model', value='stable-diffusion-v1-5/stable-diffusion-v1-5')
-                    synthesis_way = gr.Radio(['Sampling', 'MultiDiffusion'], label='Synthesis Way', value='Sampling')
+                    synthesis_way = gr.Radio(['Sampling', 'MultiDiffusion'], label='Synthesis Way', value='MultiDiffusion')
 
             with gr.Column():
                 gr.Markdown('#### Output Image:\n')
