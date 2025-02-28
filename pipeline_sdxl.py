@@ -47,6 +47,9 @@ class ADPipeline(StableDiffusionXLPipeline):
 
     def init(self, enable_gradient_checkpoint):
         self.freeze()
+        self.enable_vae_slicing()
+        # self.enable_model_cpu_offload()
+        # self.enable_vae_tiling()
         weight_dtype = torch.float32
         if self.accelerator.mixed_precision == "fp16":
             weight_dtype = torch.float16
