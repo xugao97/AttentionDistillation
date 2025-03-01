@@ -35,7 +35,11 @@ def create_interface_texture_synthesis(runner):
             with gr.Column():
                 gr.Markdown('#### Output Image:\n')
                 result_gallery = gr.Gallery(label='Output', elem_id='gallery', columns=2, height='auto', preview=True)
-        
+
+                gr.Examples(
+                    [[Image.open('./webui/images/42.jpg').convert('RGB'), 'Sampling', 512, 1024, 50]],
+                    [texture_image, synthesis_way, height, width, num_steps]
+                )
         ips = [texture_image, height, width, seed, num_steps, iterations, lr, mixed_precision, num_images_per_prompt, synthesis_way,model]
 
         run_button.click(fn=runner.run_texture_synthesis, inputs=ips, outputs=[result_gallery])

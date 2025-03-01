@@ -18,10 +18,15 @@ def create_interface_style_t2i(runner):
                 prompt = gr.Textbox(label='Prompt', value='A rocket')
                 negative_prompt = gr.Textbox(label='Negative Prompt', value='')
 
-                base_model_list = ['stable-diffusion-v1-5/stable-diffusion-v1-5', 'stabilityai/stable-diffusion-2-1', 'stabilityai/stable-diffusion-xl-base-1.0']
+                base_model_list = ['stable-diffusion-v1-5/stable-diffusion-v1-5', 'stabilityai/stable-diffusion-xl-base-1.0']
                 model = gr.Radio(choices=base_model_list, label='Select a Base Model', value='stabilityai/stable-diffusion-xl-base-1.0')
 
                 run_button = gr.Button(value='Run')
+                
+                gr.Examples(
+                    [[Image.open('./webui/images/image_02_01.jpg').convert('RGB'), 'A rocket', 'stabilityai/stable-diffusion-xl-base-1.0']],
+                    [style_image, prompt, model]
+                )
 
             with gr.Column():
                 with gr.Accordion('Options', open=True):
