@@ -4,6 +4,9 @@
 ### [Project Page](https://xugao97.github.io/AttentionDistillation/) &ensp; [Paper](https://arxiv.org/abs/2502.20235)
 ![alt text](assets/1.jpg)
 
+## 🔥🔥  News
+* **2025/03/01**: We provide a simple HuggingFace🤗 demo. Check it out [here](https://huggingface.co/spaces/ccchenzc/AttentionDistillation) !
+
 ## Setup
 
 This code was tested with Python 3.10, Pytorch 2.5 and Diffusers 0.32.
