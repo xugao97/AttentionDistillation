@@ -11,6 +11,29 @@ from diffusers.image_processor import PipelineImageInput
 from losses import *
 from tqdm import tqdm
 
+from torch import Tensor
+from torch.nn import Conv2d
+from torch.nn.modules.utils import _pair
+
+
+# asymmetric tiling from https://github.com/tjm35/asymmetric-tiling-sd-webui/blob/main/scripts/asymmetric_tiling.py
+def make_circular_asymm(model, tileX: bool, tileY: bool):
+    for layer in [
+        layer for layer in model.modules() if isinstance(layer, torch.nn.Conv2d)
+    ]:
+        layer.padding_modeX = 'circular' if tileX else 'constant'
+        layer.padding_modeY = 'circular' if tileY else 'constant'
+        layer.paddingX = (layer._reversed_padding_repeated_twice[0], layer._reversed_padding_repeated_twice[1], 0, 0)
+        layer.paddingY = (0, 0, layer._reversed_padding_repeated_twice[2], layer._reversed_padding_repeated_twice[3])
+        layer._conv_forward = __replacementConv2DConvForward.__get__(layer, Conv2d)
+    return model
+
+
+def __replacementConv2DConvForward(self, input: Tensor, weight: Tensor, bias: Optional[Tensor]):
+    working = F.pad(input, self.paddingX, mode=self.padding_modeX)
+    working = F.pad(working, self.paddingY, mode=self.padding_modeY)
+    return F.conv2d(working, weight, bias, self.stride, _pair(0), self.dilation, self.groups)
+
 
 class ADPipeline(StableDiffusionPipeline):
     def freeze(self):
@@ -57,6 +80,22 @@ class ADPipeline(StableDiffusionPipeline):
         if enable_gradient_checkpoint:
             self.classifier.enable_gradient_checkpointing()
 
+    def enable_tiling(self, tiling):
+        if tiling == "enable":
+            make_circular_asymm(self.unet, True, True)
+            make_circular_asymm(self.vae, True, True)
+        elif tiling == "x_only":
+            make_circular_asymm(self.unet, True, False)
+            make_circular_asymm(self.vae, True, False)
+        elif tiling == "y_only":
+            make_circular_asymm(self.unet, False, True)
+            make_circular_asymm(self.vae, False, True)
+        else:
+            make_circular_asymm(self.unet, False, False)
+            make_circular_asymm(self.vae, False, False)
+
+
+
     def sample(
         self,
         lr=0.05,
@@ -64,6 +103,7 @@ class ADPipeline(StableDiffusionPipeline):
         attn_scale=1,
         adain=False,
         weight=0.25,
+        tiling=False,
         controller=None,
         style_image=None,
         content_image=None,
@@ -101,6 +141,7 @@ class ADPipeline(StableDiffusionPipeline):
             mixed_precision=mixed_precision, gradient_accumulation_steps=1
         )
         self.init(enable_gradient_checkpoint)
+        self.enable_tiling(tiling)
 
         # 2. Define call parameters
         if prompt is not None and isinstance(prompt, str):

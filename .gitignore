@@ -81,6 +81,13 @@ target/
 # IPython
 profile_default/
 ipython_config.py
+test.ipynb
+output.png
+style.png
+content.png
+output_roll.png
+
+
 
 # pyenv
 #   For a library or package, you might want to ignore these files since the code is
