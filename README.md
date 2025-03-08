@@ -5,6 +5,8 @@
 ![alt text](assets/1.jpg)
 
 ## 🔥🔥  News
+* **2025/03/08**: We provide a  new notebook with `Style-specific T2I Generation with Flux.1-dev`. See [Issue 1](https://github.com/xugao97/AttentionDistillation/issues/1) for more details.
+
 * **2025/03/05**: We add `tiling` to enable seamless textures generation. See [Issue 3](https://github.com/xugao97/AttentionDistillation/issues/3) for more details.
 
 * **2025/03/01**: We provide a simple HuggingFace🤗 demo. Check it out [here](https://huggingface.co/spaces/ccchenzc/AttentionDistillation) !
